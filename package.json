@@ -11,7 +11,7 @@
         "e2e": "ng e2e",
         "serve:ssr:myFlix-Angular-client": "node dist/my-flix-angular-client/server/server.mjs",
         "docs": "typedoc",
-        "deploy": "ng deploy --base-href=/myFlix-Angular-client/"
+        "deploy": "ng deploy --base-href=/my-flix-angular-client/"
     },
     "private": true,
     "dependencies": {

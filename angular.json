@@ -18,7 +18,7 @@
                     "builder": "@angular-devkit/build-angular:application",
                     "options": {
                         "baseHref": "/myFlix-Angular/",
-                        "outputPath": "dist",
+                        "outputPath": "dist/my-flix-angular-client",
                         "index": "src/index.html",
                         "browser": "src/main.ts",
                         "polyfills": ["zone.js"],
@@ -107,15 +107,15 @@
                     }
                 },
                 "deploy": {
-                    "builder": "angular-cli-ghpages:deploy",
+                    "builder": "angular-cli-ghpages",
                     "options": {
-                        "baseHref": "/myFlix-Angular-client/",
+                        "baseHref": "/my-flix-angular-client",
                         "name": "Bob3x",
                         "email": "bob3xx@protonmail.com",
                         "repo": "https://github.com/Bob3x/myFlix-Angular-client.git",
                         "branch": "gh-pages",
                         "silent": false,
-                        "message": "Deploy to GitHub pages",
+                        "message": "Deploy to ...",
                         "budgets": [
                             {
                                 "type": "initial",
