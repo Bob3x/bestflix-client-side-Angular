@@ -4,7 +4,7 @@
     "scripts": {
         "ng": "ng",
         "start": "node server.js",
-        "build": "ng build --prod",
+        "build": "ng build --configuration production",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
         "lint": "ng lint",
@@ -49,5 +49,8 @@
         "typedoc": "^0.27.2",
         "typedoc-github-theme": "^0.2.0",
         "typescript": "~5.6.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
     }
 }
