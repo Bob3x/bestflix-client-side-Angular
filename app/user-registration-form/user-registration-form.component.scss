@@ -1,0 +1,94 @@
+/**
+ * User Registration Form styles
+ * @file user-registration-form.component.scss
+ * @description Styling for the registration form dialog
+ */
+
+/** 
+ * Form card container
+ * @selector mat-card
+ * @description Styles for the Material card containing the form
+ */
+mat-card {
+    width: 520px;
+    min-height: 320px;
+    padding: 24px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: rgba(223, 223, 223, 0.25);
+}
+
+/**
+ * Card header styling
+ * @selector mat-card-header
+ * @description Header section with title
+ */
+mat-card-header {
+    margin-bottom: 20px;
+    padding: 0;
+
+    mat-card-title {
+        font-size: 1.5em;
+        color: #3a3a3a;
+        font-weight: 500;
+        margin: 0;
+    }
+}
+/**
+ * Form content container
+ * @selector mat-card-content
+ * @description Contains form fields with proper spacing
+ */
+mat-card-content {
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 8px 0;
+    }
+}
+
+/**
+ * Form field styling
+ * @selector mat-form-field
+ * @description Individual form field containers
+ */
+mat-form-field {
+    width: 100%;
+    margin: 0;
+}
+
+/**
+ * Action buttons container
+ * @selector mat-card-actions
+ * @description Container for form submission buttons
+ */
+mat-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 16px 0 0 0;
+
+    button {
+        min-width: 100px;
+        font-weight: 500;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+// Media query for mobile
+@media (max-width: 600px) {
+    mat-card {
+        width: 100%;
+        height: auto;
+    }
+
+    mat-card-content form {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,77 @@
+<!--NavbarComponent-->
+<app-navbar></app-navbar>
+<div class="profile-container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Update Profile</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form>
+                <mat-form-field>
+                    <input
+                        matInput
+                        [(ngModel)]="userData.Username"
+                        placeholder="Username"
+                        name="Username" />
+                </mat-form-field>
+                <mat-form-field>
+                    <input
+                        matInput
+                        [(ngModel)]="userData.Password"
+                        [type]="hidePassword ? 'password' : 'text'"
+                        placeholder="New Password"
+                        name="Password" />
+                    <button
+                        mat-icon-button
+                        matSuffix
+                        (click)="hidePassword = !hidePassword"
+                        [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hidePassword"></button>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [(ngModel)]="userData.Email" placeholder="Email" name="Email" />
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input
+                        matInput
+                        [(ngModel)]="userData.Birthday"
+                        type="date"
+                        placeholder="Birthday"
+                        name="Birthday" />
+                </mat-form-field>
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="updateUser()">Update Profile</button>
+            <button mat-raised-button color="warn" (click)="deleteUser()">Delete Profile</button>
+        </mat-card-actions>
+    </mat-card>
+    <!--User's Favorite Movies-->
+    <mat-card class="favorites-section">
+        <mat-card-header>
+            <mat-card-title class="favorite-section-title">My Favorite Movies</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="favorites-grid" *ngIf="favoriteMovies.length">
+                <div class="movie-item" *ngFor="let movie of favoriteMovies">
+                    <mat-card class="movie-card">
+                        <mat-card-content>
+                            <h3 class="movie-title">{{ movie.Title }}</h3>
+                        </mat-card-content>
+                        <img [src]="movie.ImagePath" [alt]="movie.Title" />
+                        <mat-card-actions>
+                            <button
+                                mat-icon-button
+                                class="favorite-button"
+                                (click)="deleteFavoriteMovie(movie._id)">
+                                <mat-icon color="warn">favorite</mat-icon>
+                            </button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+            </div>
+            <p *ngIf="!favoriteMovies.length">No favorite movies yet</p>
+        </mat-card-content>
+    </mat-card>
+</div>

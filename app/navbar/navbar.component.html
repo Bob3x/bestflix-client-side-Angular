@@ -1,0 +1,21 @@
+// navbar.component.html /** * Navigation bar template providing main app navigation and user
+actions * &#64;template MatToolbar - Material toolbar component * &#64;template MatMenu - Material
+menu component for navigation options * &#64;template MatIcon - Material icons for visual elements
+*/
+<mat-toolbar color="primary">
+    <span class="brand-text" routerLink="/movies">myFlix</span>
+    <!--<span class="spacer"></span>-->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="toolbar-icon">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="isMoviesRoute() ? '/profile' : '/movies'">
+            <mat-icon>{{ isMoviesRoute() ? "person" : "movie" }}</mat-icon>
+            <span>{{ isMoviesRoute() ? "Profile" : "Movies" }}</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>

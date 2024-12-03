@@ -1,0 +1,50 @@
+/**
+ * Responsive breakpoint mixins
+ * @file breakpoints.scss
+ * @description Provides reusable media query mixins for responsive design
+ */
+
+/**
+ * Mobile devices breakpoint
+ * @mixin mobile
+ * @description Styles for devices with max width of 600px
+ * @usage
+ *   @include mobile {
+ *     .element { width: 100%; }
+ *   }
+ */
+@mixin mobile {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+
+/**
+ * Tablet devices breakpoint
+ * @mixin tablet
+ * @description Styles for devices between 601px and 960px width
+ * @usage
+ *   @include tablet {
+ *     .element { width: 50%; }
+ *   }
+ */
+@mixin tablet {
+    @media (min-width: 601px) and (max-width: 960px) {
+        @content;
+    }
+}
+
+/**
+ * Desktop devices breakpoint
+ * @mixin desktop
+ * @description Styles for devices with min width of 961px
+ * @usage
+ *   @include desktop {
+ *     .element { width: 33.33%; }
+ *   }
+ */
+@mixin desktop {
+    @media (min-width: 961px) {
+        @content;
+    }
+}

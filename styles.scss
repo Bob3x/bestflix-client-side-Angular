@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+// Include material core styles
+@include mat.core();
+
+// Light theme
+/*$light-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: $light-primary,
+            accent: $light-accent
+        )
+    )
+);
+
+// Dark theme
+$dark-theme: mat.define-dark-theme(
+    (
+        color: (
+            primary: $dark-primary,
+            accent: $dark-accent
+        )
+    )
+);
+
+// Apply the light theme by default
+@include mat.all-component-themes($light-theme);
+
+// Apply the dark theme only when the `.dark-theme` class is active
+.dark-theme {
+    @include mat.all-component-themes($dark-theme);
+    background: #303030;
+    color: #ffffff;
+}*/
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: linear-gradient(to right, #667083, #a6c6e9);
+}
+.app-container {
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
