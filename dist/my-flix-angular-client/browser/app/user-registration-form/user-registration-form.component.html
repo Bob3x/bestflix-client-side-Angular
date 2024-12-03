@@ -1,0 +1,61 @@
+<!-- 
+    User Registration Form Template
+    @file user-registration-form.component.html
+    @description Material Design form for user registration with two-way data binding
+    @requires MatCardModule, MatFormFieldModule, MatInputModule
+-->
+
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Sign Up!</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="userData.Username"
+                    type="text"
+                    placeholder="Username"
+                    name="username"
+                    autocomplete="username"
+                    required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="userData.Password"
+                    type="password"
+                    placeholder="Password"
+                    name="new-password"
+                    autocomplete="new-password"
+                    required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="userData.Email"
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    autocomplete="email"
+                    required />
+            </mat-form-field>
+
+            <mat-form-field>
+                <input
+                    matInput
+                    [(ngModel)]="userData.Birthday"
+                    type="date"
+                    placeholder="Birthday"
+                    name="bday"
+                    autocomplete="bday" />
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="registerUser()">Sign Up</button>
+    </mat-card-actions>
+</mat-card>

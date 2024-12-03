@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<!--Failed attemp to implement simple dark/light theme feature-->
+<!--<button mat-icon-button (click)="toggleTheme()">
+        <mat-icon>{{ isDarkTheme ? "light_mode" : "dark_mode" }}</mat-icon>
+    </button>-->
+<!----------------------------------------------->
+
+<div class="movie-grid">
+    <mat-card class="movie-card" *ngFor="let movie of movies">
+        <mat-card-header>
+            <mat-card-title>{{ movie.Title }}</mat-card-title>
+        </mat-card-header>
+        <img class="movie-image" src="{{ movie.ImagePath }}" [alt]="movie.Title" />
+        <mat-card-actions>
+            <button mat-button color="primary" (click)="openGenre(movie)">Genre</button>
+            <button mat-button color="primary" (click)="openDirector(movie)">Director</button>
+            <button mat-button color="primary" (click)="openDescription(movie)">Description</button>
+            <button mat-icon-button class="favorite-button" (click)="modifyFavoriteMovies(movie)">
+                <mat-icon [class.favorite]="movie.isFavorite">
+                    {{ movie.isFavorite ? "favorite" : "favorite_border" }}
+                </mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

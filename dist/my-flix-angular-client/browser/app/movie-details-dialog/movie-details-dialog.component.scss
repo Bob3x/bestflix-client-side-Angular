@@ -1,0 +1,36 @@
+.details-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.details-title {
+    color: rgb(78, 78, 78);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.details-content {
+    color: rgb(80, 0, 112);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+mat-card-actions {
+    justify-content: center;
+
+    button {
+        min-width: 86px;
+        font-weight: 500;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        overflow: visible;
+        background-color: rgb(230, 230, 230);
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    }
+}
