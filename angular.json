@@ -109,10 +109,10 @@
                 "deploy": {
                     "builder": "angular-cli-ghpages:deploy",
                     "options": {
-                        "baseHref": "/myFlix-Angular/",
+                        "baseHref": "/myFlix-Angular-client/",
                         "name": "Bob3x",
                         "email": "bob3xx@protonmail.com",
-                        "repo": "https://github.com/Bob3x/myFlix-Angular.git",
+                        "repo": "https://github.com/Bob3x/myFlix-Angular-client.git",
                         "branch": "gh-pages",
                         "silent": false,
                         "message": "Deploy to GitHub pages",

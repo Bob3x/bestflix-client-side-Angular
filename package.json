@@ -3,13 +3,15 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
-        "build": "ng build",
+        "start": "node server.js",
+        "build": "ng build --prod",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
+        "lint": "ng lint",
+        "e2e": "ng e2e",
         "serve:ssr:myFlix-Angular-client": "node dist/my-flix-angular-client/server/server.mjs",
         "docs": "typedoc",
-        "deploy": "ng deploy --base-href=/your-repo-name/"
+        "deploy": "ng deploy --base-href=/myFlix-Angular-client/"
     },
     "private": true,
     "dependencies": {
