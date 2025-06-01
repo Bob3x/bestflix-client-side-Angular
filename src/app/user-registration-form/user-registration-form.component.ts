@@ -3,6 +3,7 @@
  * @file user-registration-form.component.ts
  * @description Handles new user registration with form validation and API integration
  */
+
 import { Component, OnInit, Inject } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { FetchApiDataService } from "../services/fetch-api-data.service";
@@ -13,20 +14,19 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatDialogRef } from "@angular/material/dialog";
 import { Router } from "@angular/router";
+import { UserRegistration, RegistrationResponse } from "../models/user";
+
+/**
+ * Interface for user details
+ * @interface UserDetails
+ * @description Defines the structure of user details for registration
+ */
 
 /**
  * Interface for API registration response
  * @interface RegistrationResponse
  * @description Defines the structure of the registration API response
  */
-interface RegistrationResponse {
-    user: {
-        Username: string;
-        Email: string;
-        FavoriteMovies: string[];
-    };
-    token: string;
-}
 
 /**
  * User Registration Form Component
@@ -47,11 +47,11 @@ export class UserRegistrationFormComponent implements OnInit {
      * @property userData
      * @type {Object}
      */
-    userData = {
+    userData: UserRegistration = {
         Username: "",
         Password: "",
         Email: "",
-        Birthday: ""
+        Birthday: new Date()
     };
 
     /**
@@ -73,9 +73,24 @@ export class UserRegistrationFormComponent implements OnInit {
     ngOnInit(): void {}
 
     registerUser(): void {
-        this.fetchApiData.userRegistration(this.userData).subscribe({
+        const formattedUserData = {
+            ...this.userData,
+            Birthday: this.userData.Birthday
+                ? new Date(this.userData.Birthday).toISOString().split("T")[0]
+                : undefined
+        };
+        this.fetchApiData.userRegistration(formattedUserData).subscribe({
             next: (response: RegistrationResponse) => {
+                console.log("Registration response:", response);
                 try {
+                    if (!response || !response.user || !response.token) {
+                        throw new Error("Invalid registration response");
+                    }
+
+                    if (!response.user.Username) {
+                        throw new Error("Username not provided in response");
+                    }
+
                     // Store authentication data
                     localStorage.setItem("token", response.token);
                     localStorage.setItem("user", JSON.stringify(response.user));
