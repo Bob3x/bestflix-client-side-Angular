@@ -9,7 +9,7 @@ import { Injectable } from "@angular/core";
 import { Observable, throwError } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 
-const apiUrl = "https://my-movies-flix-app-56f9661dc035.herokuapp.com/";
+const apiUrl = "https://my-movies-flix-app-56f9661dc035.herokuapp.com/api/";
 
 /**
  * User interface defining user data structure
@@ -376,7 +376,7 @@ export class FetchApiDataService {
      * @returns {Observable<User>} Observable of updated user data
      * @description Adds specified movie to user's favorites list
      */
-    addFovoriteMovie(movieId: string): Observable<User> {
+    addFavoriteMovie(movieId: string): Observable<User> {
         const username = JSON.parse(localStorage.getItem("user") || "{}").Username;
         return this.http
             .post<User>(
