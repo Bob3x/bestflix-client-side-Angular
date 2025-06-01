@@ -1,24 +1,11 @@
-<!--
- * Welcome page template
- * @file welcome-page.component.html
- * @description Landing page template with authentication options
- -->
-
 <div class="main-page">
-    <h1>Welcome to myFlix!</h1>
+    <h1>Welcome to bestflix!</h1>
+    <div class="welcome-navbar"></div>
     <div class="button-container">
-        <button
-            mat-raised-button
-            color="primary"
-            style="margin-right: 10px"
-            (click)="openUserRegistrationDialog()">
+        <button mat-raised-button color="primary" style="margin-right: 10px" (click)="openUserRegistrationDialog()">
             Sign Up
         </button>
-        <button
-            mat-raised-button
-            style="margin: 10px"
-            color="primary"
-            (click)="openUserLoginDialog()">
+        <button mat-raised-button style="margin: 10px" color="primary" (click)="openUserLoginDialog()">
             Login
         </button>
     </div>
