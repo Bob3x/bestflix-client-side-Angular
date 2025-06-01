@@ -26,7 +26,15 @@ export interface User {
  * @description User data returned from API, excluding password with auth token
  * @extends Omit <User, "Password">
  */
-export interface UserResponse extends Omit<User, "Password"> {
+export interface UserResponse extends Omit<User, "Password"> {}
+
+/**
+ * Registration Response interface
+ * @interface RegistrationResponse
+ * @description User data returned from API with auth token
+ */
+export interface RegistrationResponse {
+    user: UserResponse;
     token: string;
 }
 
@@ -48,5 +56,5 @@ export interface UserLogin {
  */
 export interface UserRegistration extends UserLogin {
     Email: string;
-    Birthday?: string;
+    Birthday?: Date;
 }
