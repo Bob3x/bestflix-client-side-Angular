@@ -112,7 +112,7 @@
                         "baseHref": "/my-flix-angular-client",
                         "name": "Bob3x",
                         "email": "bob3xx@protonmail.com",
-                        "repo": "https://github.com/Bob3x/myFlix-Angular-client.git",
+                        "repo": "https://github.com/Bob3x/bestflix-client-side-Angular.git",
                         "branch": "gh-pages",
                         "silent": false,
                         "message": "Deploy to ...",
