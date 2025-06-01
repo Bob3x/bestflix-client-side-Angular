@@ -225,7 +225,7 @@ export class MovieCardComponent implements OnInit {
             });
         } else {
             // Add to favorites
-            this.fetchMovies.addFovoriteMovie(movie._id).subscribe({
+            this.fetchMovies.addFavoriteMovie(movie._id).subscribe({
                 next: (response: User) => {
                     movie.isFavorite = true;
                     // Update user in localStorage
@@ -253,7 +253,7 @@ export class MovieCardComponent implements OnInit {
             localStorage.clear();
 
             // Show logout message
-            this.snackBar.open("Logut successful!", "OK", {
+            this.snackBar.open("Logout successful!", "OK", {
                 duration: 2000
             });
 
