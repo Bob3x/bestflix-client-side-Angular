@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/myFlix-Angular/',
+  basePath: '/',
   entryPoints: new Map([['', () => import('./main.server.mjs')]]),
 };
   
