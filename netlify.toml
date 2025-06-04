@@ -1,8 +1,3 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.csr.html"
-  status = 200
-
 [build]
-  publish = "dist/myFlix-Angular/browser"
+  publish = "dist/my-flix-angular-client/browser"
   command = "ng build --configuration production"
