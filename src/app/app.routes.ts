@@ -38,7 +38,8 @@ export const routes: Routes = [
      * @redirectTo welcome
      * @description Redirects empty path to welcome page
      */
-    { path: "", redirectTo: "welcome", pathMatch: "full" },
+    // { path: "", redirectTo: "welcome", pathMatch: "full" },
+    { path: "", component: WelcomePageComponent, pathMatch: "full" }
     /**
      * Wildcard route
      * @path **
